@@ -1,0 +1,16 @@
+{
+  "name": "@webdoky/yari-ports",
+  "version": "0.1.0",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo '// tbd'"
+  },
+  "dependencies": {
+    "@mdn/yari": "^0.4.804"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "prettier": "^2.3.2"
+  }
+}
