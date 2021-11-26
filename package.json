@@ -1,6 +1,6 @@
 {
   "name": "@webdoky/yari-ports",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Wrapper around @mdn/yari, containing facade layer between Webdoky platform and Yari, as well as some ported Kuma macros",
   "main": "lib/index.js",
   "scripts": {
