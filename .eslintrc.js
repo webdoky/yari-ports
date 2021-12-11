@@ -7,6 +7,7 @@ module.exports = {
     es6: true,
   },
   plugins: [],
-  rules: {
+  parserOptions: {
+    sourceType: "module"
   },
 };
