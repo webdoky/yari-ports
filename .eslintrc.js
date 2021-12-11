@@ -1,13 +1,14 @@
 module.exports = {
-  extends: [
-    'prettier',
-  ],
+  extends: ['prettier'],
   env: {
     node: true,
     es6: true,
   },
-  plugins: [],
+  plugins: ['prettier'],
   parserOptions: {
-    sourceType: "module"
+    sourceType: 'module',
+  },
+  rules: {
+    'prettier/prettier': 'error',
   },
 };
