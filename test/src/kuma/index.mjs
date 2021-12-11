@@ -1,18 +1,16 @@
 import test from 'ava';
+import { macros } from '../../../lib/kuma/index.js';
 
-test('Basic test example', (t) => {
-  // Test will fail if not exactly
-  // two assertions are made
-  t.plan(2);
-  // Skipped tests still count to the plan
-  t.true.skip();
-  t.truthy('xxx');
+test("Macros function's result should contain a dictionary", (t) => {
+  const kumaPorts = macros({});
+  t.truthy(kumaPorts.dictionary);
 
-  t.log('prgress');
+  t.timeout(200);
+});
 
-  // Test fails if exceeded.
-  // Resets after each assertion.
-  // There is no default timeout.
-  // Globally from CLI: --timeout=10s
+test("Macros function's result should contain a lookup function", (t) => {
+  const kumaPorts = macros({});
+  t.truthy(kumaPorts.lookup);
+
   t.timeout(200);
 });
