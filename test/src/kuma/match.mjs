@@ -45,6 +45,15 @@ test('extractMacros should recognize macros with arguments', (t) => {
   t.timeout(200);
 });
 
+test('extractMacros should recognize macros with hyphens in the name', (t) => {
+  const input = '{{Non-Standard_Inline}}';
+  const result = extractMacros(input);
+  t.is(result.length, 1);
+  t.is(result[0].functionName, 'Non-Standard_Inline');
+
+  t.timeout(200);
+});
+
 test('parseMacroArgs should recognize all arguments', (t) => {
   const input = '"Some", "args", 0';
   const result = parseMacroArgs(input);
