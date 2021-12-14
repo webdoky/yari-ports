@@ -1,14 +1,7 @@
 import test from 'ava';
 import { macros } from '../../../../lib/kuma/index.js';
 
-test("Macros 'NonStandardInline' should be present", (t) => {
-  const kumaPorts = macros({});
-  t.truthy(kumaPorts.lookup('readonlyinline'));
-
-  t.timeout(200);
-});
-
-test("Macros 'NonStandardInline' should be recognizable", (t) => {
+test("Macros 'NonStandardInline' should be present and be recognizable", (t) => {
   const kumaPorts = macros({});
   t.truthy(kumaPorts.lookup('Non-Standard_Inline'));
 
