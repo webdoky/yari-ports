@@ -54,6 +54,16 @@ test('extractMacros should recognize macros with hyphens in the name', (t) => {
   t.timeout(200);
 });
 
+test('extractMacros should recognize macros with curly brackets in arguments', (t) => {
+  const input =
+    '{{JSxRef("Operators/Destructuring_assignment", "{a, b} = {a:1, b:2}")}}';
+  const result = extractMacros(input);
+  t.is(result.length, 1);
+  t.is(result[0].functionName, 'JSxRef');
+
+  t.timeout(200);
+});
+
 test('parseMacroArgs should recognize all arguments', (t) => {
   const input = '"Some", "args", 0';
   const result = parseMacroArgs(input);
@@ -98,6 +108,16 @@ test('parseMacroArgs should recognize integer arguments', (t) => {
   t.is(result.length, 4);
   t.is(result[2], 0);
   t.is(result[3], 20);
+
+  t.timeout(200);
+});
+
+test('parseMacroArgs should recognize arguments with curly brackets', (t) => {
+  const input = '"Operators/Object_initializer", "{}"';
+  const result = parseMacroArgs(input);
+  t.is(result.length, 2);
+  t.is(result[0], 'Operators/Object_initializer');
+  t.is(result[1], '{}');
 
   t.timeout(200);
 });
