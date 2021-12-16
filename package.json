@@ -6,17 +6,25 @@
   "repository": "github:webdoky/yari-ports",
   "scripts": {
     "test": "ava test/**/*.js test/**/*.mjs",
-    "test-watch": "ava --watch --verbose"
+    "test-watch": "ava --watch --verbose",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@mdn/yari": "^0.4.804",
     "ava": "^3.15.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^15.0.0",
+    "@commitlint/config-conventional": "^15.0.0",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.4",
     "prettier": "^2.3.2"
+  },
+  "commitlint": {
+    "extends": ["@commitlint/config-conventional"],
+    "rules": {}
   },
   "author": "Webdoky",
   "license": "MPL-2.0"
