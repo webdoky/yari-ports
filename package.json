@@ -48,8 +48,7 @@
           "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
         }
       ]
-    ],
-    "dryRun": true
+    ]
   },
   "author": "Webdoky",
   "license": "MPL-2.0"
