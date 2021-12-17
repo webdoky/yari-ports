@@ -121,3 +121,13 @@ test('parseMacroArgs should recognize arguments with curly brackets', (t) => {
 
   t.timeout(200);
 });
+
+test('parseMacroArgs should recognize arguments with escaped quotes', (t) => {
+  const input = '"Strict_mode", "\\"use strict\\""';
+  const result = parseMacroArgs(input);
+  t.is(result.length, 2);
+  t.is(result[0], 'Strict_mode');
+  t.is(result[1], '"use strict"');
+
+  t.timeout(200);
+});
