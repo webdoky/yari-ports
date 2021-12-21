@@ -17,3 +17,9 @@ test("Macros 'specifications' should generate markup even without explicit query
   const specifications = kumaPorts.lookup('specifications');
   t.snapshot(specifications());
 });
+
+test("Macros 'specifications' should generate markup with browser-compatibility information", (t) => {
+  const kumaPorts = macros({ browserCompat: 'css.properties.display' });
+  const specifications = kumaPorts.lookup('specifications');
+  t.snapshot(specifications());
+});

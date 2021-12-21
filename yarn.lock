@@ -457,6 +457,11 @@
   resolved "https://registry.yarnpkg.com/@mdn/browser-compat-data/-/browser-compat-data-4.0.8.tgz#4f903e4d62bac0160a7b8283ba5a664a0ab589e1"
   integrity sha512-knKNYGN0Yvo9UUIbCG0P1XgEf1L49JfJYCoFxxiwz55R3FKuZh3a24nC6KuvKHU3/P/5oNjqlpoqZxjqyDAifQ==
 
+"@mdn/browser-compat-data@^4.1.2":
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/@mdn/browser-compat-data/-/browser-compat-data-4.1.2.tgz#3d33b0ccb96deb766b82aea8b60fed759884776c"
+  integrity sha512-IzFTNGGMx+2fUPO2Gne9l9AiiRKIAAr+gsQNWmHzEnExhSbEmXX8BEfmR6ZW/6wu9mACWWmhMWtvjGf/lwcpog==
+
 "@mdn/yari@^0.4.804":
   version "0.4.805"
   resolved "https://registry.yarnpkg.com/@mdn/yari/-/yari-0.4.805.tgz#79b87d2fab2a372129344ae0c95e0b2070477f01"
@@ -1642,6 +1647,11 @@ browser-specs@^2.15.1:
   version "2.15.1"
   resolved "https://registry.yarnpkg.com/browser-specs/-/browser-specs-2.15.1.tgz#ec00b60519abf1e116c6fadd2acb3bb28a32a7f1"
   integrity sha512-z6OwXRUCYpjm4BKQjzvIm+WFrouWkvIKWYx4YJx/MCRKpacW19Mp0q6GVCGKdDNYInjq5gSspeTb9aNHGghnSA==
+
+browser-specs@^2.19.3:
+  version "2.19.3"
+  resolved "https://registry.yarnpkg.com/browser-specs/-/browser-specs-2.19.3.tgz#d4bab1bef1e61b4537052f51ee4cbff2a8afa72d"
+  integrity sha512-5+HbEfJcsn91kUWguMts8c3O8aagvPMIzdTXS1pHpQtGVu+jrFUtDlo2w6kABBg8xVTvBX2bQnFH4iMLGAO1Uw==
 
 browserslist@^4.16.6:
   version "4.17.6"
