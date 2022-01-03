@@ -11,3 +11,9 @@ test("Macros 'compat' should generate markup according to given query", (t) => {
   const compat = kumaPorts.lookup('compat');
   t.snapshot(compat('css.types.-moz-image-rect'));
 });
+
+test("Macros 'compat' should generate links to webdoky", (t) => {
+  const kumaPorts = macros({});
+  const compat = kumaPorts.lookup('compat');
+  t.snapshot(compat('javascript.builtins.Boolean'));
+});
