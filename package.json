@@ -13,7 +13,8 @@
     "@mdn/browser-compat-data": "^4.1.2",
     "@mdn/yari": "^0.4.804",
     "ava": "^3.15.0",
-    "browser-specs": "^2.19.3"
+    "browser-specs": "^2.19.3",
+    "mdn-data": "^2.0.26"
   },
   "devDependencies": {
     "@commitlint/cli": "^15.0.0",
