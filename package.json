@@ -21,7 +21,8 @@
     "eslint-plugin-node": "^11.1.0",
     "mdn-data": "^2.0.26",
     "rollup": "^2.75.7",
-    "sanitize-filename": "^1.6.3"
+    "sanitize-filename": "^1.6.3",
+    "unist-builder": "^3.0.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^15.0.0",
