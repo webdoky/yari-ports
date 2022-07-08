@@ -6,7 +6,6 @@
   "repository": "github:webdoky/yari-ports",
   "type": "module",
   "scripts": {
-    "build": "rimraf dist && rollup -c rollup.config.js",
     "test": "ava test/**/*.js test/**/*.mjs",
     "test-watch": "ava --watch --verbose",
     "prepare": "husky install"
