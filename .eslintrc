@@ -1,0 +1,21 @@
+{
+  "extends": ["prettier"],
+  "env": {
+    "node": true,
+    "es6": true
+  },
+  "plugins": ["prettier", "node"],
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "requireConfigFile": false
+  },
+  "rules": {
+    "prettier/prettier": "error",
+    "node/file-extension-in-import": [
+      "error",
+      "always"
+    ]
+  }
+}
