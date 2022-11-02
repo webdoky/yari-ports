@@ -6,7 +6,7 @@
   "repository": "github:webdoky/yari-ports",
   "type": "module",
   "scripts": {
-    "test": "ava test/**/*.js test/**/*.mjs",
+    "test": "ava --coverage",
     "test-watch": "ava --watch --verbose",
     "prepare": "husky install"
   },
