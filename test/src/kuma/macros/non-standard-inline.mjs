@@ -1,14 +1,15 @@
 import test from 'ava';
-import { macros } from '../../../../lib/kuma/index.js';
 
-test("Macros 'NonStandardInline' should be present and be recognizable", (t) => {
+import { macros } from '../../../../lib/kuma';
+
+test("macros 'NonStandardInline' should be present and be recognizable", (t) => {
   const kumaPorts = macros({});
   t.truthy(kumaPorts.lookup('Non-Standard_Inline'));
 
   t.timeout(200);
 });
 
-test("Macros 'NonStandardInline' should match the snapshot", (t) => {
+test("macros 'NonStandardInline' should match the snapshot", (t) => {
   const kumaPorts = macros({});
   const nonStandardInline = kumaPorts.lookup('Non-Standard_Inline');
   t.snapshot(nonStandardInline());
