@@ -1,13 +1,14 @@
 import test from 'ava';
-import { macros } from '../../../../lib/kuma/index.js';
+
+import { testMacros } from '../../utils.mjs';
 
 test("Macros 'cssInfo' should be present", (t) => {
-  const kumaPorts = macros({});
-  t.truthy(kumaPorts.lookup('csssyntax'));
+  t.truthy(testMacros().lookup('csssyntax'));
 });
 
 test("Macros 'cssInfo' should generate markup", (t) => {
-  const kumaPorts = macros({ targetLocale: 'uk', slug: 'Web/CSS/height' });
-  const cssInfo = kumaPorts.lookup('cssInfo');
+  const cssInfo = testMacros({
+    env: { slug: 'Web/CSS/height' },
+  }).lookup('cssInfo');
   t.snapshot(cssInfo());
 });
