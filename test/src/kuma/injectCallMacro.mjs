@@ -24,6 +24,7 @@ test("callMacro function applies the given context in it's scope", (t) => {
   function macro() {
     t.is(this.smth, initialContext.smth);
     t.truthy(this.callMacro);
+    return '{{macro}}';
   }
 
   newContext.callMacro(macro);
@@ -39,10 +40,11 @@ test("callMacro function applies the given context in it's scope recursively", (
   function innerMacro() {
     t.is(this.smth, initialContext.smth);
     t.truthy(this.callMacro);
+    return '{{innerMacro}}';
   }
 
   function outerMacro() {
-    newContext.callMacro(innerMacro);
+    return newContext.callMacro(innerMacro);
   }
 
   newContext.callMacro(outerMacro);
