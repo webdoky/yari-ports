@@ -24,7 +24,6 @@ test("callMacro function applies the given context in it's scope", (t) => {
   function macro() {
     t.is(this.smth, initialContext.smth);
     t.truthy(this.callMacro);
-    return '{{macro}}';
   }
 
   newContext.callMacro(macro);
@@ -40,7 +39,6 @@ test("callMacro function applies the given context in it's scope recursively", (
   function innerMacro() {
     t.is(this.smth, initialContext.smth);
     t.truthy(this.callMacro);
-    return '{{innerMacro}}';
   }
 
   function outerMacro() {
@@ -48,6 +46,24 @@ test("callMacro function applies the given context in it's scope recursively", (
   }
 
   newContext.callMacro(outerMacro);
+
+  t.timeout(200);
+});
+
+test('callMacro function correctly returns result of recursively called macros', (t) => {
+  const sampleContent = '<inner macro result>';
+
+  const newContext = injectCallMacro({});
+
+  function innerMacro() {
+    return sampleContent;
+  }
+
+  function outerMacro() {
+    return newContext.callMacro(innerMacro);
+  }
+
+  t.is(sampleContent, newContext.callMacro(outerMacro));
 
   t.timeout(200);
 });
