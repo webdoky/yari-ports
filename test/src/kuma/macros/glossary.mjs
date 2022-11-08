@@ -1,9 +1,9 @@
 import test from 'ava';
 
-import { testMacros } from '../../utils.mjs';
+import { macros } from '../../../../lib/kuma/index.js';
 
 test("Macros 'glossary' should be present", (t) => {
-  t.truthy(testMacros().lookup('glossary'));
+  t.truthy(macros({}).lookup('glossary'));
 
   t.timeout(200);
 });

@@ -1,9 +1,9 @@
 import test from 'ava';
 
-import { testMacros } from '../../utils.mjs';
+import { macros } from '../../../../lib/kuma/index.js';
 
 test("Macros 'jssidebar' should be present", (t) => {
-  t.truthy(testMacros().lookup('jssidebar'));
+  t.truthy(macros({}).lookup('jssidebar'));
 
   t.timeout(200);
 });

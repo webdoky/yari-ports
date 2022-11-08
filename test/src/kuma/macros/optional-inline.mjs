@@ -1,15 +1,15 @@
 import test from 'ava';
 
-import { testMacros } from '../../utils.mjs';
+import { macros } from '../../../../lib/kuma/index.js';
 
 test("Macros 'OptionalInline' should be present", (t) => {
-  t.truthy(testMacros().lookup('optional_inline'));
+  t.truthy(macros({}).lookup('optional_inline'));
 
   t.timeout(200);
 });
 
 test("Macros 'OptionalInline' should match the snapshot", (t) => {
-  const optionalInline = testMacros().lookup('optional_inline');
+  const optionalInline = macros({}).lookup('optional_inline');
   t.snapshot(optionalInline());
 
   t.timeout(200);

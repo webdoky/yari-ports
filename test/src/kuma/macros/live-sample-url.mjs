@@ -1,9 +1,9 @@
 import test from 'ava';
 
-import { testMacros } from '../../utils.mjs';
+import { macros } from '../../../../lib/kuma/index.js';
 
 test("Macros 'LiveSampleUrl' should be present", (t) => {
-  t.truthy(testMacros().lookup('LiveSampleUrl'));
+  t.truthy(macros({}).lookup('LiveSampleUrl'));
 
   t.timeout(200);
 });

@@ -1,12 +1,14 @@
 import test from 'ava';
 
-import { testMacros } from '../../utils.mjs';
+import { macros } from '../../../../lib/kuma/index.js';
 
 test("Macros 'xref_csscomputed' should be present", (t) => {
-  t.truthy(testMacros().lookup('xref_csscomputed'));
+  t.truthy(macros({}).lookup('xref_csscomputed'));
 });
 
 test("Macros 'xref_csscomputed' should generate proper markup", (t) => {
-  const xrefCssComputed = testMacros().lookup('xref_csscomputed');
+  const xrefCssComputed = macros({ env: { targetLocale: 'uk' } }).lookup(
+    'xref_csscomputed'
+  );
   t.snapshot(xrefCssComputed());
 });

@@ -1,15 +1,15 @@
 import test from 'ava';
 
-import { testMacros } from '../../utils.mjs';
+import { macros } from '../../../../lib/kuma/index.js';
 
 test("Macros 'htmlattrdef' should be present", (t) => {
-  t.truthy(testMacros().lookup('htmlattrdef'));
+  t.truthy(macros({}).lookup('htmlattrdef'));
 
   t.timeout(200);
 });
 
 test("Macros 'htmlattrdef' should generate anchor links", (t) => {
-  const htmlattrdef = testMacros().lookup('htmlattrdef');
+  const htmlattrdef = macros({}).lookup('htmlattrdef');
   t.snapshot(htmlattrdef('value'));
 
   t.timeout(200);

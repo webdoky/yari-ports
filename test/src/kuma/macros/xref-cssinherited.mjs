@@ -1,12 +1,14 @@
 import test from 'ava';
 
-import { testMacros } from '../../utils.mjs';
+import { macros } from '../../../../lib/kuma/index.js';
 
 test("Macros 'xref_cssinherited' should be present", (t) => {
-  t.truthy(testMacros().lookup('xref_cssinherited'));
+  t.truthy(macros({}).lookup('xref_cssinherited'));
 });
 
 test("Macros 'xref_cssinherited' should generate proper markup", (t) => {
-  const xrefCssInherited = testMacros().lookup('xref_cssinherited');
+  const xrefCssInherited = macros({ env: { targetLocale: 'uk' } }).lookup(
+    'xref_cssinherited'
+  );
   t.snapshot(xrefCssInherited());
 });
