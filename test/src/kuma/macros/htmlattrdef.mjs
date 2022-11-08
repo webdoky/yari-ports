@@ -2,16 +2,14 @@ import test from 'ava';
 
 import { macros } from '../../../../lib/kuma';
 
-test("macros 'htmlattrdef' should be present", (t) => {
-  const kumaPorts = macros({});
-  t.truthy(kumaPorts.lookup('htmlattrdef'));
+test("Macros 'htmlattrdef' should be present", (t) => {
+  t.truthy(macros({}).lookup('htmlattrdef'));
 
   t.timeout(200);
 });
 
-test("macros 'htmlattrdef' should generate anchor links", (t) => {
-  const kumaPorts = macros({});
-  const htmlattrdef = kumaPorts.lookup('htmlattrdef');
+test("Macros 'htmlattrdef' should generate anchor links", (t) => {
+  const htmlattrdef = macros({}).lookup('htmlattrdef');
   t.snapshot(htmlattrdef('value'));
 
   t.timeout(200);

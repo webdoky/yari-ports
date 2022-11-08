@@ -2,9 +2,8 @@ import test from 'ava';
 
 import { macros } from '../../../../lib/kuma';
 
-test("macros 'glossary' should be present", (t) => {
-  const kumaPorts = macros({});
-  t.truthy(kumaPorts.lookup('glossary'));
+test("Macros 'glossary' should be present", (t) => {
+  t.truthy(macros({}).lookup('glossary'));
 
   t.timeout(200);
 });

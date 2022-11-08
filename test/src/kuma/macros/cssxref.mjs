@@ -2,31 +2,84 @@ import test from 'ava';
 
 import { macros } from '../../../../lib/kuma';
 
-test("macros 'cssxref' should be present", (t) => {
-  const kumaPorts = macros({});
-  t.truthy(kumaPorts.lookup('cssxref'));
+test("Macros 'cssxref' should be present", (t) => {
+  t.truthy(macros({}).lookup('cssxref'));
 });
 
-test("macros 'cssxref' should return a link with proper href and text caption", (t) => {
-  const kumaPorts = macros({ targetLocale: 'en-US' });
-  const cssxref = kumaPorts.lookup('CSSxRef');
-  t.snapshot(cssxref('url()'));
+test("Macros 'cssxref' should return a link with proper href and text caption", (t) => {
+  const cssxref = macros({
+    env: { targetLocale: 'en-US' },
+    registry: {
+      getPageBySlug: () => ({
+        tags: [
+          'CSS',
+          'CSS Function',
+          'CSS Images',
+          'CSS:Mozilla Extensions',
+          'Function',
+          'Non-standard',
+          'Reference',
+        ],
+      }),
+    },
+  }).lookup('CSSxRef');
+  t.snapshot(cssxref('-moz-image-rect'));
 });
 
-test("macros 'cssxref' should generate special link for '&lt;color&gt;'", (t) => {
-  const kumaPorts = macros({ targetLocale: 'en-US' });
-  const cssxref = kumaPorts.lookup('CSSxRef');
+test("Macros 'cssxref' should generate special link for '&lt;color&gt;'", (t) => {
+  const cssxref = macros({
+    env: { targetLocale: 'en-US' },
+    registry: {
+      getPageBySlug: () => ({ tags: [] }),
+    },
+  }).lookup('CSSxRef');
   t.snapshot(cssxref('&lt;color&gt;'));
 });
 
-test("macros 'cssxref' should generate special link for '&lt;flex&gt;'", (t) => {
-  const kumaPorts = macros({ targetLocale: 'en-US' });
-  const cssxref = kumaPorts.lookup('CSSxRef');
+test("Macros 'cssxref' should generate special link for '&lt;flex&gt;'", (t) => {
+  const cssxref = macros({
+    env: { targetLocale: 'en-US' },
+    registry: {
+      getPageBySlug: () => ({ tags: [] }),
+    },
+  }).lookup('CSSxRef');
   t.snapshot(cssxref('&lt;flex&gt;'));
 });
 
-test("macros 'cssxref' should generate special link for '&lt;position&gt;'", (t) => {
-  const kumaPorts = macros({ targetLocale: 'en-US' });
-  const cssxref = kumaPorts.lookup('CSSxRef');
+test("Macros 'cssxref' should generate special link for '&lt;position&gt;'", (t) => {
+  const cssxref = macros({
+    env: { targetLocale: 'en-US' },
+    registry: {
+      getPageBySlug: () => ({ tags: [] }),
+    },
+  }).lookup('CSSxRef');
   t.snapshot(cssxref('&lt;position&gt;'));
+});
+
+test("Macros 'cssxref' should return a link for a data type", (t) => {
+  const cssxref = macros({
+    env: { targetLocale: 'en-US' },
+    registry: {
+      getPageBySlug: () => ({
+        tags: [
+          'CSS',
+          'CSS Data Type',
+          'Data Type',
+          'Layout',
+          'Reference',
+          'Web',
+          'color',
+          'hsl',
+          'hsla',
+          'rgb',
+          'rgba',
+          'unit',
+          'lch',
+          'lab',
+          'lwb',
+        ],
+      }),
+    },
+  }).lookup('CSSxRef');
+  t.snapshot(cssxref('color_value'));
 });

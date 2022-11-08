@@ -2,13 +2,32 @@ import test from 'ava';
 
 import { macros } from '../../../../lib/kuma';
 
-test("macros 'cssInfo' should be present", (t) => {
-  const kumaPorts = macros({});
-  t.truthy(kumaPorts.lookup('csssyntax'));
+test("Macros 'cssInfo' should be present", (t) => {
+  t.truthy(
+    macros({
+      env: { slug: 'Web/CSS/height' },
+    }).lookup('cssInfo'),
+  );
 });
 
-test("macros 'cssInfo' should generate markup", (t) => {
-  const kumaPorts = macros({ targetLocale: 'uk', slug: 'Web/CSS/height' });
-  const cssInfo = kumaPorts.lookup('cssInfo');
+test("Macros 'cssInfo' should generate markup for a property", (t) => {
+  const cssInfo = macros({
+    env: { slug: 'Web/CSS/height', targetLocale: 'uk' },
+    registry: {
+      getPageBySlug: () => ({
+        tags: [
+          'CSS',
+          'CSS Property',
+          'Layout',
+          'Reference',
+          'Vertical',
+          'dimensions',
+          'height',
+          'recipe:css-property',
+          'size',
+        ],
+      }),
+    },
+  }).lookup('cssInfo');
   t.snapshot(cssInfo());
 });
