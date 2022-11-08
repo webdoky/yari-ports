@@ -1,5 +1,6 @@
 import test from 'ava';
-import { injectCallMacro } from '../../../lib/kuma/index.js';
+
+import { injectCallMacro } from '../../../lib/kuma';
 
 test('The callMacro function in the context', (t) => {
   const newContext = injectCallMacro({ smth: '???' });

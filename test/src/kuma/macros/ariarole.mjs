@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { macros } from '../../../../lib/kuma/index.js';
+import { macros } from '../../../../lib/kuma';
 
 test("Macros 'ariarole' should be present", (t) => {
   t.truthy(macros({}).lookup('ariarole'));

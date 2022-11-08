@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { macros } from '../../../../lib/kuma/index.js';
+import { macros } from '../../../../lib/kuma';
 
 test("Macros 'httpheader' should be present", (t) => {
   t.truthy(macros({}).lookup('httpheader'));
@@ -10,7 +10,7 @@ test("Macros 'httpheader' should be present", (t) => {
 
 test("Macros 'httpheader' should generate links to HTTP header pages", (t) => {
   const httpheader = macros({ env: { targetLocale: 'uk' } }).lookup(
-    'httpheader'
+    'httpheader',
   );
   t.snapshot(httpheader('Content-Security-Policy'));
 
@@ -19,15 +19,15 @@ test("Macros 'httpheader' should generate links to HTTP header pages", (t) => {
 
 test("Macros 'httpheader' should consider 4 arguments", (t) => {
   const httpheader = macros({ env: { targetLocale: 'uk' } }).lookup(
-    'httpheader'
+    'httpheader',
   );
   t.snapshot(
     httpheader(
       'Content-Security-Policy',
       'Content security policy',
       'section-name',
-      true
-    )
+      true,
+    ),
   );
 
   t.timeout(200);

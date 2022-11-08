@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { macros } from '../../../../lib/kuma/index.js';
+import { macros } from '../../../../lib/kuma';
 
 test("Macros 'htmlattrxref' should be present", (t) => {
   t.truthy(macros({}).lookup('htmlattrxref'));
@@ -10,7 +10,7 @@ test("Macros 'htmlattrxref' should be present", (t) => {
 
 test("Macros 'htmlattrxref' should generate links to elements", (t) => {
   const htmlattrxref = macros({ env: { targetLocale: 'uk' } }).lookup(
-    'htmlattrxref'
+    'htmlattrxref',
   );
   t.snapshot(htmlattrxref('required', 'input'));
 
@@ -19,7 +19,7 @@ test("Macros 'htmlattrxref' should generate links to elements", (t) => {
 
 test("Macros 'htmlattrxref' should generate links to global attributes", (t) => {
   const htmlattrxref = macros({ env: { targetLocale: 'uk' } }).lookup(
-    'htmlattrxref'
+    'htmlattrxref',
   );
   t.snapshot(htmlattrxref('class'));
 

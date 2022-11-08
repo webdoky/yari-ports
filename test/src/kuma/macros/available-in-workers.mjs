@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { macros } from '../../../../lib/kuma/index.js';
+import { macros } from '../../../../lib/kuma';
 
 test("Macros 'availableInWorkers' should be present and be recognizable", (t) => {
   t.truthy(macros({}).lookup('availableInWorkers'));

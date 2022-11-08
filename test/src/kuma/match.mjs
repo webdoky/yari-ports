@@ -1,5 +1,6 @@
 import test from 'ava';
-import { parseMacroArgs, extractMacros } from '../../../lib/kuma/match.js';
+
+import { extractMacros, parseMacroArguments } from '../../../lib/kuma/match';
 
 test('extractMacros should recognize macros without arguments', (t) => {
   const input = '{{dummyMacro}}';
@@ -64,17 +65,17 @@ test('extractMacros should recognize macros with curly brackets in arguments', (
   t.timeout(200);
 });
 
-test('parseMacroArgs should recognize all arguments', (t) => {
+test('parseMacroArguments should recognize all arguments', (t) => {
   const input = '"Some", "args", 0';
-  const result = parseMacroArgs(input);
+  const result = parseMacroArguments(input);
   t.is(result.length, 3);
 
   t.timeout(200);
 });
 
-test('parseMacroArgs should recognize strings in gouble quotes', (t) => {
+test('parseMacroArguments should recognize strings in gouble quotes', (t) => {
   const input = '"Some", "args", 0';
-  const result = parseMacroArgs(input);
+  const result = parseMacroArguments(input);
   t.is(result.length, 3);
   t.is(result[0], 'Some');
   t.is(result[1], 'args');
@@ -82,9 +83,9 @@ test('parseMacroArgs should recognize strings in gouble quotes', (t) => {
   t.timeout(200);
 });
 
-test('parseMacroArgs should recognize strings in single quotes', (t) => {
+test('parseMacroArguments should recognize strings in single quotes', (t) => {
   const input = "'Some', 'args', 0";
-  const result = parseMacroArgs(input);
+  const result = parseMacroArguments(input);
   t.is(result.length, 3);
   t.is(result[0], 'Some');
   t.is(result[1], 'args');
@@ -92,9 +93,9 @@ test('parseMacroArgs should recognize strings in single quotes', (t) => {
   t.timeout(200);
 });
 
-test('parseMacroArgs should recognize strings with quotes in mixed style', (t) => {
+test('parseMacroArguments should recognize strings with quotes in mixed style', (t) => {
   const input = '\'Some\', "args", 0';
-  const result = parseMacroArgs(input);
+  const result = parseMacroArguments(input);
   t.is(result.length, 3);
   t.is(result[0], 'Some');
   t.is(result[1], 'args');
@@ -102,9 +103,9 @@ test('parseMacroArgs should recognize strings with quotes in mixed style', (t) =
   t.timeout(200);
 });
 
-test('parseMacroArgs should recognize integer arguments', (t) => {
+test('parseMacroArguments should recognize integer arguments', (t) => {
   const input = '\'Some\', "args", 0, 20';
-  const result = parseMacroArgs(input);
+  const result = parseMacroArguments(input);
   t.is(result.length, 4);
   t.is(result[2], 0);
   t.is(result[3], 20);
@@ -112,9 +113,9 @@ test('parseMacroArgs should recognize integer arguments', (t) => {
   t.timeout(200);
 });
 
-test('parseMacroArgs should recognize arguments with curly brackets', (t) => {
+test('parseMacroArguments should recognize arguments with curly brackets', (t) => {
   const input = '"Operators/Object_initializer", "{}"';
-  const result = parseMacroArgs(input);
+  const result = parseMacroArguments(input);
   t.is(result.length, 2);
   t.is(result[0], 'Operators/Object_initializer');
   t.is(result[1], '{}');
@@ -122,9 +123,9 @@ test('parseMacroArgs should recognize arguments with curly brackets', (t) => {
   t.timeout(200);
 });
 
-test('parseMacroArgs should recognize arguments with escaped quotes', (t) => {
+test('parseMacroArguments should recognize arguments with escaped quotes', (t) => {
   const input = '"Strict_mode", "\\"use strict\\""';
-  const result = parseMacroArgs(input);
+  const result = parseMacroArguments(input);
   t.is(result.length, 2);
   t.is(result[0], 'Strict_mode');
   t.is(result[1], '"use strict"');

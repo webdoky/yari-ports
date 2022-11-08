@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { macros } from '../../../../lib/kuma/index.js';
+import { macros } from '../../../../lib/kuma';
 
 test("Macros 'Deprecated_Header' should be present and be recognizable", (t) => {
   t.truthy(macros({}).lookup('deprecated_header'));
@@ -10,7 +10,7 @@ test("Macros 'Deprecated_Header' should be present and be recognizable", (t) => 
 
 test("Macros 'Deprecated_Header' should match the snapshot", (t) => {
   const deprecatedHeader = macros({ env: { targetLocale: 'uk' } }).lookup(
-    'deprecated_header'
+    'deprecated_header',
   );
   t.snapshot(deprecatedHeader());
 

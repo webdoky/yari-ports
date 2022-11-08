@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { macros } from '../../../../lib/kuma/index.js';
+import { macros } from '../../../../lib/kuma';
 
 test("Macros 'EmbedInteractiveExample' should be present", (t) => {
   t.truthy(macros({}).lookup('EmbedInteractiveExample'));
@@ -48,9 +48,9 @@ test("Macros 'EmbedInteractiveExample' should throw an error when provided with 
   t.throws(
     () => {
       t.throws(
-        embedInteractiveExample('path/to/js/doc', 'an-unsupported-class')
+        embedInteractiveExample('path/to/js/doc', 'an-unsupported-class'),
       );
     },
-    { instanceOf: Error }
+    { instanceOf: Error },
   );
 });

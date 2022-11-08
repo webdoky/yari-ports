@@ -1,11 +1,12 @@
 import test from 'ava';
-import { macros } from '../../../../lib/kuma/index.js';
+
+import { macros } from '../../../../lib/kuma';
 
 test("Macros 'cssInfo' should be present", (t) => {
   t.truthy(
     macros({
       env: { slug: 'Web/CSS/height' },
-    }).lookup('cssInfo')
+    }).lookup('cssInfo'),
   );
 });
 

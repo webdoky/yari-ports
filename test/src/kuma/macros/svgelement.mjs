@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { macros } from '../../../../lib/kuma/index.js';
+import { macros } from '../../../../lib/kuma';
 
 test("Macros 'svgelement' should be present", (t) => {
   t.truthy(macros({}).lookup('svgelement'));
@@ -10,7 +10,7 @@ test("Macros 'svgelement' should be present", (t) => {
 
 test("Macros 'svgelement' should generate links to items in SVG section", (t) => {
   const svgelement = macros({ env: { targetLocale: 'uk' } }).lookup(
-    'svgelement'
+    'svgelement',
   );
   t.snapshot(svgelement('svg'));
 

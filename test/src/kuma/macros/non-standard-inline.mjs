@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { macros } from '../../../../lib/kuma/index.js';
+import { macros } from '../../../../lib/kuma';
 
 test("Macros 'NonStandardInline' should be present and be recognizable", (t) => {
   t.truthy(macros({}).lookup('Non-Standard_Inline'));

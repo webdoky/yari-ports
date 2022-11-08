@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import { macros } from '../../../../lib/kuma/index.js';
+import { macros } from '../../../../lib/kuma';
 
 test("Macros 'htmlElement' should be present", (t) => {
   t.truthy(macros({}).lookup('htmlElement'));
@@ -10,7 +10,7 @@ test("Macros 'htmlElement' should be present", (t) => {
 
 test("Macros 'htmlElement' should match the snapshot", (t) => {
   const htmlElement = macros({ env: { targetLocale: 'en-US' } }).lookup(
-    'htmlElement'
+    'htmlElement',
   );
   t.snapshot(htmlElement('input/button', 'button'));
 
