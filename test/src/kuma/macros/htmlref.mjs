@@ -14,12 +14,15 @@ test("Macros 'htmlref' should return proper response", (t) => {
     registry: {
       getChildren: () => [
         {
-          slug: 'test-page/span',
+          data: { slug: 'test-page/span', title: 'Test span page' },
+          hasLocalizedContent: true,
+          path: '/uk/docs/test-page/span',
           tags: ['HTML Test tag', 'Another tag'],
         },
       ],
       getPageBySlug: () => ({
-        slug: 'test-page',
+        data: { path: '/uk/docs/test-page', slug: 'test-page', title: 'Test page' },
+        hasLocalizedContent: false,
       }),
     },
   }).lookup('htmlref');
