@@ -1,15 +1,16 @@
 import test from 'ava';
-import { macros } from '../../../../lib/kuma/index.js';
+
+import { macros } from '../../../../lib/kuma';
 
 test("Macros 'EmbedLiveSample' should be present", (t) => {
-  const kumaPorts = macros({});
-  t.truthy(kumaPorts.lookup('EmbedLiveSample'));
+  t.truthy(macros({}).lookup('EmbedLiveSample'));
 
   t.timeout(200);
 });
 
 test("Macros 'EmbedLiveSample' should generate proper markup", (t) => {
-  const kumaPorts = macros({ path: '/uk/docs/Web/HTML/Element/input' });
-  const embedLiveSample = kumaPorts.lookup('EmbedLiveSample');
+  const embedLiveSample = macros({
+    env: { path: '/uk/docs/Web/HTML/Element/input', targetLocale: 'uk' },
+  }).lookup('EmbedLiveSample');
   t.snapshot(embedLiveSample('examplebutton', 200, 55, '', '', 'nobutton'));
 });

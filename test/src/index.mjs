@@ -1,26 +1,21 @@
 import test from 'ava';
-import yariPorts from '../../lib/index.js';
 
-test('Yari ports should contain popularities', (t) => {
-  const { popularitiesJson } = yariPorts;
+import { markdown, popularitiesJson } from '../../lib';
+
+test('yari ports should contain popularities', (t) => {
   t.truthy(popularitiesJson);
 });
 
-test('Yari ports should contain markdown helpers', (t) => {
-  const { markdown } = yariPorts;
+test('yari ports should contain markdown helpers', (t) => {
   t.truthy(markdown);
 });
 
-test('Yari ports should contain asDefinitionList function in markdown helpers', (t) => {
-  const {
-    markdown: { asDefinitionList },
-  } = yariPorts;
+test('yari ports should contain asDefinitionList function in markdown helpers', (t) => {
+  const { asDefinitionList } = markdown;
   t.truthy(asDefinitionList);
 });
 
-test('Yari ports should contain isDefinitionList function in markdown helpers', (t) => {
-  const {
-    markdown: { isDefinitionList },
-  } = yariPorts;
+test('yari ports should contain isDefinitionList function in markdown helpers', (t) => {
+  const { isDefinitionList } = markdown;
   t.truthy(isDefinitionList);
 });

@@ -1,9 +1,9 @@
 import test from 'ava';
-import { macros } from '../../../../lib/kuma/index.js';
+
+import { macros } from '../../../../lib/kuma';
 
 test("Macros 'cssref' should be present", (t) => {
-  const kumaPorts = macros({});
-  t.truthy(kumaPorts.lookup('cssref'));
+  t.truthy(macros({}).lookup('cssref'));
 
   t.timeout(200);
 });
