@@ -35,3 +35,12 @@ test("Macros 'specifications' should support 'specUrls' parameter", (t) => {
   }).lookup('specifications');
   t.snapshot(specifications());
 });
+
+test("Macros 'specifications' should support 'specUrls' parameter without anchors in it", (t) => {
+  const specifications = macros({
+    env: {
+      specUrls: 'https://drafts.csswg.org/css-flexbox/',
+    },
+  }).lookup('specifications');
+  t.snapshot(specifications());
+});
