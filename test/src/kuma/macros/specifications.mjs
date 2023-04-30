@@ -26,3 +26,12 @@ test("Macros 'specifications' should generate markup with browser-compatibility 
   }).lookup('specifications');
   t.snapshot(specifications());
 });
+
+test("Macros 'specifications' should support 'specUrls' parameter", (t) => {
+  const specifications = macros({
+    env: {
+      specUrls: 'https://drafts.csswg.org/selectors/#specificity-rules',
+    },
+  }).lookup('specifications');
+  t.snapshot(specifications());
+});
