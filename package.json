@@ -1,6 +1,6 @@
 {
   "name": "@webdoky/yari-ports",
-  "version": "3.7.1",
+  "version": "3.16.0",
   "description": "Wrapper around @mdn/yari, containing facade layer between Webdoky platform and Yari, as well as some ported Kuma macros",
   "main": "lib/index.js",
   "repository": "github:webdoky/yari-ports",
@@ -19,9 +19,9 @@
     "@mdn/browser-compat-data": "^4.1.2",
     "@mdn/yari": "^1.7.0",
     "browser-specs": "^2.19.3",
-    "esm-resolve": "^1.0.8",
     "filenamify": "^5.1.1",
     "mdn-data": "^2.0.26",
+    "resolve-package-path": "^4.0.3",
     "unist-builder": "^3.0.0"
   },
   "devDependencies": {
