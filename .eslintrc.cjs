@@ -46,16 +46,11 @@ module.exports = {
       },
     },
     {
-      files: ['lib/kuma/macros/**/*', 'test/src/kuma/macros/**/*'],
+      files: ['lib/kuma/**/*', 'test/src/kuma/**/*'],
       rules: {
         'default-param-last': 'off',
         'unicorn/filename-case': 'off',
-        'unicorn/prevent-abbreviations': [
-          'error',
-          {
-            checkFilenames: false,
-          },
-        ],
+        'unicorn/prevent-abbreviations': 'off',
       },
     },
   ],
