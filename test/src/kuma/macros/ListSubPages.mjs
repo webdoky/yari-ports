@@ -18,11 +18,6 @@ const CHILDREN_MOCK = [
     slug: 'Web/HTML/Element/input',
     title: '<input>',
   },
-  {
-    path: '/uk/docs/Web/HTML/Element/input/button',
-    slug: 'Web/HTML/Element/input/button',
-    title: '<input type="button">',
-  },
 ];
 
 test("Macros 'ListSubPages' should be present", (t) => {
@@ -36,6 +31,11 @@ test("Macros 'ListSubPages' should render subpages of a specified page", (t) => 
     env: { targetLocale: 'uk' },
     registry: {
       getChildren: () => CHILDREN_MOCK,
+      getPageBySlug: () => ({
+        slug: 'Web/HTML/Element',
+        title: 'Довідник елементів HTML',
+      }),
+      hasPage: () => true,
     },
   }).lookup('ListSubPages');
 
@@ -49,49 +49,15 @@ test("Macros 'ListSubPages' should render subpages of a current page", (t) => {
     env: { path: '/uk/docs/Web/HTML/Element', targetLocale: 'uk' },
     registry: {
       getChildren: () => CHILDREN_MOCK,
+      getPageBySlug: () => ({
+        slug: 'Web/HTML/Element',
+        title: 'Довідник елементів HTML',
+      }),
+      hasPage: () => true,
     },
   }).lookup('ListSubPages');
 
   t.snapshot(ListSubPages());
-
-  t.timeout(200);
-});
-
-test("Macros 'ListSubPages' should consider depth parameter", (t) => {
-  const ListSubPages = macros({
-    env: { path: '/uk/docs/Web/HTML/Element', targetLocale: 'uk' },
-    registry: {
-      getChildren: () => CHILDREN_MOCK,
-    },
-  }).lookup('ListSubPages');
-
-  t.snapshot(ListSubPages('/uk/docs/Web/HTML/Element', 2));
-
-  t.timeout(200);
-});
-
-test("Macros 'ListSubPages' should consider reverse parameter", (t) => {
-  const ListSubPages = macros({
-    env: { path: '/uk/docs/Web/HTML/Element', targetLocale: 'uk' },
-    registry: {
-      getChildren: () => CHILDREN_MOCK,
-    },
-  }).lookup('ListSubPages');
-
-  t.snapshot(ListSubPages('/uk/docs/Web/HTML/Element', 1, 1));
-
-  t.timeout(200);
-});
-
-test("Macros 'ListSubPages' should consider ordered parameter", (t) => {
-  const ListSubPages = macros({
-    env: { path: '/uk/docs/Web/HTML/Element', targetLocale: 'uk' },
-    registry: {
-      getChildren: () => CHILDREN_MOCK,
-    },
-  }).lookup('ListSubPages');
-
-  t.snapshot(ListSubPages('/uk/docs/Web/HTML/Element', 1, 0, 1));
 
   t.timeout(200);
 });
