@@ -14,18 +14,18 @@ test("Macros 'GlossaryDisambiguation' should generate markup according to its co
     registry: {
       getChildren: () => [
         {
-          description:
-            'Базова лінія — це невидима лінія, на якій стоять літери, цифри та інші знаки.',
+          content:
+            'Базова лінія — це невидима лінія, на якій стоять літери, цифри та інші знаки.\n\nЦей текст не повинен потрапити у вивід макроса.',
           path: '/uk/docs/Glossary/Baseline',
           slug: 'Glossary/Baseline/Typography',
           title: 'Базова лінія',
         },
         {
+          content:
+            'База – це сукупність можливостей, які можна використовувати з максимальною надійністю в усіх браузерах.\n\nЦей текст не повинен потрапити у вивід макроса.',
+          path: '/uk/docs/Glossary/Baseline/Compatibility',
           slug: 'Glossary/Baseline/Compatibility',
           title: 'База',
-          description:
-            'База – це сукупність можливостей, які можна використовувати з максимальною надійністю в усіх браузерах.',
-          path: '/uk/docs/Glossary/Baseline/Compatibility',
         },
       ],
     },
