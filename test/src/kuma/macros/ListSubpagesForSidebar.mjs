@@ -18,11 +18,6 @@ const CHILDREN_MOCK = [
     slug: 'Web/HTML/Element/input',
     title: '<input>',
   },
-  {
-    path: '/uk/docs/Web/HTML/Element/input/button',
-    slug: 'Web/HTML/Element/input/button',
-    title: '<input type="button">',
-  },
 ];
 
 test("Macros 'ListSubpagesForSidebar' should be present", (t) => {
