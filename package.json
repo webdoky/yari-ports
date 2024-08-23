@@ -16,9 +16,9 @@
     "test-watch": "ava --watch --verbose"
   },
   "dependencies": {
-    "@mdn/browser-compat-data": "^5.5.8",
+    "@mdn/browser-compat-data": "^5.5.47",
     "@mdn/yari": "^1.7.0",
-    "browser-specs": "^3.73.0",
+    "browser-specs": "^4.16.0",
     "filenamify": "^5.1.1",
     "resolve-package-path": "^4.0.3",
     "unist-builder": "^3.0.0"
@@ -45,7 +45,7 @@
     "eslint-plugin-simple-import-sort": "^8.0.0",
     "eslint-plugin-unicorn": "^44.0.2",
     "husky": "^7.0.4",
-    "mdn-data": "^2.4.0",
+    "mdn-data": "^2.9.0",
     "prettier": "^2.7.1",
     "rollup": "^2.75.7",
     "semantic-release": "^18.0.1"
@@ -95,6 +95,6 @@
   "author": "Webdoky",
   "license": "MPL-2.0",
   "peerDependencies": {
-    "mdn-data": "^2.4.0"
+    "mdn-data": "^2.9.0"
   }
 }

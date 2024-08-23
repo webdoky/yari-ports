@@ -1211,10 +1211,10 @@
   resolved "https://registry.yarnpkg.com/@mdn/browser-compat-data/-/browser-compat-data-5.1.2.tgz#f6d1c669f442208564b384e04ca8451e205645ff"
   integrity sha512-X7lnoos6vF+llTjMDhP8HQJy2nL4RNf1LRejfNKOJLKrZ55A4p2z1WdhPY/NCieqiLH6gwlzDSVpmPYSPLd+bg==
 
-"@mdn/browser-compat-data@^5.5.8":
-  version "5.5.8"
-  resolved "https://registry.yarnpkg.com/@mdn/browser-compat-data/-/browser-compat-data-5.5.8.tgz#80549bd5636c2f088229df7649114b8ab8e46f78"
-  integrity sha512-E4gRHp5Kko37r6z1dO2qQ7xUUWig6GltUteuzi5WUKqHEayGN9DdGJWlgrYGnvwFc2Omh33MTJ8IXsD3t7+Okw==
+"@mdn/browser-compat-data@^5.5.47":
+  version "5.5.47"
+  resolved "https://registry.yarnpkg.com/@mdn/browser-compat-data/-/browser-compat-data-5.5.47.tgz#9b2ab4b7c5179b91206e4c91d0b6cdfac45fc00a"
+  integrity sha512-M/lmqoDgbKz0LP9K5mjqzNWpbTDmgBeGsh5A+o9KcJuI3KbJ/PCiXFs7XKR1nabQxwYtcHpl9Bn0OGUnijcXiw==
 
 "@mdn/yari@^1.7.0":
   version "1.7.0"
@@ -2461,10 +2461,10 @@ browser-specs@^3.13.0:
   resolved "https://registry.yarnpkg.com/browser-specs/-/browser-specs-3.13.0.tgz#cf9d896a36c7f46dd50f5ebf82968ad22c1ba95d"
   integrity sha512-HU/pp210tqpGGnrAJzD2NLLrVFF1wZfuTEQ5C2UWwqutjvcBSIZsdOtnRWMiUOIT7QOlkBwZ1Iv/6kQye8tyTA==
 
-browser-specs@^3.73.0:
-  version "3.73.0"
-  resolved "https://registry.yarnpkg.com/browser-specs/-/browser-specs-3.73.0.tgz#d010b01148650122d45e77ea21076d4017d00c3e"
-  integrity sha512-NF8QFVLHDYJvkeTmQICnMXcMoQ2pT6RvEo7zopZWNC3NdFph2L5Jf2PpXwU98JvnVIsmyjKItqjJ1mmG35eR5g==
+browser-specs@^4.16.0:
+  version "4.16.0"
+  resolved "https://registry.yarnpkg.com/browser-specs/-/browser-specs-4.16.0.tgz#500d9130ef6af626734981f1c85c683a85fd466d"
+  integrity sha512-uDJSYrBc+occ2f7mUN8nEeYscyhcYo7Gn6xM1F4b8uHp8gLnMjzPdv5ln8ctwKIBsOuMtbPL+l8zdp44wE0deA==
 
 browserslist@^4.20.2, browserslist@^4.21.0:
   version "4.21.1"
@@ -6926,10 +6926,10 @@ mdn-data@2.0.27, mdn-data@^2.0.27:
   resolved "https://registry.yarnpkg.com/mdn-data/-/mdn-data-2.0.27.tgz#1710baa7b0db8176d3b3d565ccb7915fc69525ab"
   integrity sha512-kwqO0I0jtWr25KcfLm9pia8vLZ8qoAKhWZuZMbneJq3jjBD3gl5nZs8l8Tu3ZBlBAHVQtDur9rdDGyvtfVraHQ==
 
-mdn-data@^2.4.0:
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/mdn-data/-/mdn-data-2.4.0.tgz#e78cdea15ddf9841c4de44b604ebefa0bce2978a"
-  integrity sha512-AB4NUFtlTkd4rhr73ocuerhDkpe71kr0VpFLwoYuALjYo8XBrGcBJFgqHADjPHj7Ux50bg+SyLEt6mcodrafzw==
+mdn-data@^2.9.0:
+  version "2.9.0"
+  resolved "https://registry.yarnpkg.com/mdn-data/-/mdn-data-2.9.0.tgz#22412cb6d646a978406123ee55a1a920fccc1ebb"
+  integrity sha512-mRKpwcgT19Mp/+kU3BAA8onXlmRCs+2pdLAcAQMVYw4yWzDZPmVLYfoDYkdR0y4jvNYRDJp0uIGJggwYk6WMRQ==
 
 mdurl@^1.0.0:
   version "1.0.1"
