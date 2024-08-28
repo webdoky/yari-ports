@@ -20,7 +20,7 @@
     "@mdn/yari": "^1.7.0",
     "browser-specs": "^2.19.3",
     "filenamify": "^5.1.1",
-    "mdn-data": "^2.0.26",
+    "mdn-data": "2.0.26",
     "resolve-package-path": "^4.0.3",
     "unist-builder": "^3.0.0"
   },
